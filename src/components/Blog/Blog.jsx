@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function Blog({title,body}) {
+export default function Blog({ title, body, onEdit }) {
   return (
     <Card sx={{ maxWidth: 275, textAlign: "center" }}>
       <CardContent>
@@ -17,7 +17,14 @@ export default function Blog({title,body}) {
         <Typography variant="body2">{body}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Edit</Button>
+        <Button
+          size="small"
+          onClick={() => {
+            onEdit();
+          }}
+        >
+          Edit
+        </Button>
         <Button size="small">Delete</Button>
       </CardActions>
     </Card>
